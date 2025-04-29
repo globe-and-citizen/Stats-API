@@ -25,7 +25,9 @@ const createTopic = async (req, res) => {
     }
 
     const newTopicData = {
-      user_id,
+      user: {
+        connect: { user_id: user_id }
+      },
       title,
       content,
       topic_id,
